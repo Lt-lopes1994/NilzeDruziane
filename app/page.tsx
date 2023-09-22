@@ -28,27 +28,6 @@ function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleSectionSelect = (section: any) => {
-    setSelectedSection(section);
-  };
-
-  const carousel = [
-    <div className="carousel">
-      <h2>Psicoterapia</h2>
-      <p>
-        Baseada na PSICOLOGIA HUMANISTA, com tendência teórica voltada à
-        filosofia e considera que toda pessoa tem potencialidades para o
-        crescimento e desenvolvimento naturais. Com o foco de empoderar o
-        cliente a descobrir seu EU REAL, criando um ambiente acolhedor e
-        empático em que o ser humano possa se desenvolver na direção em que ele
-        escolher e para que ele possa manifestar e ser realmente quem é, através
-        do autoconhecimento, da ampliação da consciência e compreensão da Física
-        e Mecânica Quântica. E assim ajudar o paciente resolver seus sintomas e
-        dores emocionais.
-      </p>
-    </div>,
-  ];
-
   return (
     <>
       <div className="containerHome">
@@ -77,10 +56,28 @@ function Home() {
         <div className="containerCourses bg-cover bg-containerCoursesBackgorund">
           <div className="coursesHeader">
             <div className="coursesHeaderLeft">
-              <h3>
-                Comece agora!
-                <br /> Invista em seu Autoconhecimento e desenvolvimento.
-              </h3>
+              <div className="flex flex-col">
+                <h3 className="p-2">
+                  Comece agora!
+                  <br /> Invista em seu Autoconhecimento e desenvolvimento.
+                </h3>
+                <h4 className="text-white">
+                  Como funciona a terapia online? A terapia online funciona de
+                  uma forma semelhante à presencial. Por meio das videochamadas,
+                  o profissional conversará com o paciente sobre as questões que
+                  o trouxeram à terapia. Assim, será conduzida a sessão
+                  normalmente. No entanto, o ideal é que o paciente escolha um
+                  local tranquilo da sua casa para fazer a terapia.
+                </h4>
+                <h5 className="text-white">
+                  Esse processo pode se dar através de sessões (on-line) de 50
+                  min de duração onde eu ajudo o cliente tomar consciência de
+                  seu conjunto de ideias e juntos buscamos fazer as atualizações
+                  e ressignificações necessárias para seu avanço e
+                  desenvolvimento pessoal e trazer a tona sua melhor versão
+                  Valor da sessão $ 195 Ideal 1 x por semana
+                </h5>
+              </div>
             </div>
 
             <div className="coursesHeaderRight">
@@ -94,43 +91,6 @@ function Home() {
               </a>
             </div>
           </div>
-
-          {windowSize.width > 768 ? (
-            <nav className="coursesNavBar">
-              <ul>
-                <li
-                  className={selectedSection === "psicoterapia" ? "active" : ""}
-                  onMouseEnter={() => handleSectionSelect("psicoterapia")}
-                  onMouseLeave={() => handleSectionSelect("")}
-                >
-                  Psicoterapia
-                  <div className="section">
-                    <h2>Psicoterapia</h2>
-                    <p>
-                      Como um caminho para o autoconhecimento, aprimoramento,
-                      uma forma de entrar em contato com toda sua luz e toda sua
-                      sombra, conhecer suas emoções, potencialidades e
-                      limitações, quebrar crenças, preconceitos e paradigmas.
-                      Manifestar o seu EU REAL e seu brilho único pessoal .
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          ) : (
-            <Carousel
-              className="carousel"
-              autoPlay={true}
-              infiniteLoop={true}
-              showThumbs={false}
-              showStatus={false}
-              showIndicators={false}
-              showArrows={false}
-              interval={5000}
-            >
-              {carousel}
-            </Carousel>
-          )}
         </div>
       </div>
     </>
