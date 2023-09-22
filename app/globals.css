@@ -1,0 +1,591 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import "~font-awesome/css/font-awesome.min.css";
+
+
+/* START: Header */
+.containerHeader {
+  @apply flex flex-row justify-between items-center text-goldenYellow bg-headerBackground h-32 py-0 px-3 font-bold text-xl font-sans w-full;
+}
+
+.navHeader {
+  @apply flex flex-row justify-between items-center gap-5;
+  
+}
+
+.navHeader a {
+  color: #f0d689;
+}
+
+.navHeader li:hover {
+  color: #f0d689;
+}
+
+.navHeader li:active {
+  @apply text-goldenYellow/50;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .containerHeader {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: -1rem;
+  }
+
+  .navHeader {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .containerHeader img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .containerHeader h1 {
+    text-align: center;
+  }
+}
+
+/* END: Header */
+
+/* START: Home Page */
+.containerHome {
+  @apply flex flex-col justify-between items-center h-screen w-full;
+}
+
+.hero{
+  @apply flex flex-row justify-between items-center p-2 bg-heroBackground bg-cover bg-center;
+}
+
+.heroLeftContent {
+  @apply flex items-center justify-center p-2;
+}
+
+.heroLeftContent h1 {
+  @apply text-6xl text-white font-bold mb-1 text-center p-1;
+}
+
+.heroLeftContent p {
+  @apply text-3xl text-white font-bold mb-2 text-center p-1;
+}
+
+.leftContentTexts {
+  @apply flex flex-col justify-center items-center p-2;
+}
+
+.heroRightContent {
+  @apply items-center justify-center p-4;
+} 
+
+.wppContact {
+  @apply w-24 h-24;
+}
+
+.containerCourses {
+  @apply flex flex-col items-center h-full w-full p-2;
+}
+
+.coursesHeader {
+ @apply flex justify-center items-center h-full w-full p-2;
+}
+
+.coursesHeaderLeft,
+.coursesHeaderRight {
+ @apply flex  justify-center items-center h-full w-1/2 p-2;
+}
+
+.coursesHeaderLeft h3 {
+ @apply text-6xl text-white mb-1;
+}
+
+.coursesHeader h3 {
+ @apply text-6xl text-white mb-1;
+}
+
+.coursesHeader p {
+  @apply text-xs text-white mb-2;
+}
+
+.coursesNavBar {
+  @apply flex justify-center mt-60;
+}
+
+.coursesNavBar ul {
+  @apply flex flex-col list-none;
+}
+
+.coursesNavBar li {
+  @apply cursor-pointer mx-5 px-5 py-2 border-2 border-solid border-goldenYellow bg-green-500 rounded-md ; 
+}
+
+.coursesNavBar li:hover {
+  @apply transition-all duration-500 ease-in-out bg-green-600;
+}
+
+.coursesNavBar li .section {
+  @apply absolute bottom-0 left-0 w-96 p-5 bg-yellow-300 box-border opacity-0 transform translate-y-20 transition-all duration-500 ease-in-out;
+}
+
+.coursesNavBar li.active .section,
+li:hover .section {
+  @apply opacity-100 transform translate-y-0;
+}
+
+.coursesNavBar li .section h2 {
+  @apply text-2xl text-center text-black mb-1;
+}
+
+.coursesNavBar li .section p {
+  @apply text-sm text-center text-black;
+}
+
+@media screen and (max-width: 768px) {
+  .containerHome {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+  }
+
+  .hero {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .heroLeftContent {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+  }
+
+  .heroRightContent {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+  }
+
+  .heroLeftContent h1 {
+    font-size: 2.5rem;
+    color: #f5faf5;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heroLeftContent p {
+    font-size: 2rem;
+    color: #f0f3f0;
+    margin-bottom: 2rem;
+  }
+
+  .containerCourses {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .coursesHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .coursesHeaderLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .coursesHeader h3 {
+    font-size: 2.5rem;
+    color: #507535;
+    margin-bottom: 1rem;
+  }
+
+  .coursesHeader p {
+    font-size: 2rem;
+    color: #507535;
+    margin-bottom: 2rem;
+  }
+
+  .coursesHeaderRight {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .coursesNavBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .coursesNavBar ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .coursesNavBar li {
+    cursor: pointer;
+    margin: 0 20px;
+    padding: 10px 20px;
+    border: 1px solid #8c4684;
+    background-color: #9ac979;
+    border-radius: 5px;
+  }
+
+  .coursesNavBar li:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: #a8f075;
+  }
+
+  .coursesNavBar li .carousel {
+    bottom: 50px;
+    left: 0;
+    width: 30rem;
+    padding: 20px;
+    background-color: #f3d6ac;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+
+    background: #f3d5ac88;
+    border-radius: 5px;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel h2 {
+    color: #333;
+    margin: 0.1rem;
+  }
+
+  .carousel p {
+    color: #333;
+    padding: 1rem;
+  }
+}
+
+
+/* END: Home Page */
+
+
+/* START: Footer */
+
+.containerFooter {
+  @apply flex justify-center items-center p-3;
+  
+  background-image: linear-gradient(to top, #545454, #000);
+  color: #f0d689;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.social h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.social p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.socialIcons li a {
+  color: #f3d6ac;
+}
+
+.socialIcons li a:hover {
+  color: #ffffff;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+.contact li {
+  margin: 0.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .containerFooter {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .social {
+    width: 100%;
+    height: 50%;
+  }
+
+  .contact {
+    width: 100%;
+    height: 50%;
+  }
+
+  .social ul {
+    flex-direction: column;
+  }
+
+  .social li {
+    margin: 3px 0;
+  }
+
+  .contact li {
+    margin: 0.2rem;
+  }
+
+  .contact ul {
+    flex-direction: column;
+  }
+
+  .contact li {
+    margin: 10px 0;
+  }
+
+  .contact ul {
+    flex-direction: column;
+  }
+
+  .socialIcons li a:visited {
+    color: #ffffff;
+  }
+}
+
+/* Path: src\styles\Home.css */
+
+/* END: Footer */
+
+/* START: Buttons */
+
+.btnNavigate {
+  background-color: #9ac979;
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnNavigate:hover {
+  background-color: rgba(37, 102, 39, 0.247);
+  transition: 0.5s;
+  border: 1px solid #9ac979;
+  scale: 0.9;
+}
+
+.btnNavigate:active {
+  transition: 0.5s;
+  border: 1px solid #9ac979;
+  scale: 0.9;
+}
+
+.btnNavigate:visited {
+  transition: 0.5s;
+  border: 1px solid #6af706;
+  scale: 0.9;
+}
+
+.btnNavigate:link {
+  transition: 0.5s;
+  border: 1px solid #9ac979;
+  scale: 0.9;
+}
+
+.btnWhatsapp {
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnWhatsapp:hover {
+  background-color: rgba(37, 102, 39, 0.247);
+  transition: 0.5s;
+  border: 1px solid #9ac979;
+  scale: 0.9;
+}
+
+.btnSchedule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9ac979;
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnSchedule:hover {
+  background-color: rgba(37, 102, 39, 0.247);
+  transition: 0.5s;
+  border: 1px solid #2ab9a6;
+  scale: 0.9;
+}
+
+.btnSchedule:active {
+  transition: 0.5s;
+  border: 1px solid #2ab9a6;
+  scale: 0.9;
+}
+
+.btnSchedule:visited {
+  transition: 0.5s;
+  border: 1px solid #2ab9a6;
+  scale: 0.9;
+}
+
+
+/* END: Buttons */
+
+/* START: About Page */
+
+.containerAboutUs {
+ @apply flex flex-col h-full w-full p-2;
+}
+
+.aboutUs {
+  @apply flex flex-col justify-center items-center mt-3 h-full pl-12;
+}
+
+.ower {
+  @apply flex flex-col justify-center items-center mt-3;
+}
+
+.ower p {
+  @apply font-bold mt-3;
+}
+
+.sectionAboutUs {
+ @apply flex flex-col justify-center items-center mb-11;
+}
+
+.sectionAboutUs h1 {
+ @apply font-semibold mt-9;
+}
+
+.sectionAboutUs p {
+  @apply font-bold mt-3 text-center mb-44;
+}
+
+@media screen and (max-width: 768px) {
+  .ower img {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .sectionAboutUs {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem;
+
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .sectionAboutUs h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sectionAboutUs p {
+    font-size: 1.5rem;
+  }
+
+  .ower {
+    margin-top: 1rem;
+  }
+
+  .containerAboutUs {
+    margin-top: 1rem;
+  }
+
+  .sectionAboutUs {
+    margin-top: 1rem;
+  }
+}
+
+/* END: About Page */
